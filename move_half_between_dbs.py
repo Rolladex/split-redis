@@ -22,7 +22,7 @@ def move_half_between_dbs():
 
     # Retrieve keys from the source database
     source_keys = []
-    for _, keys in redis_client.scan_iter(match='*', count=1000, db=source_db): # fetch keys in chunks to prevent blocking the server. Default 1000
+    for _, keys in redis_client.scan_iter(match='*', count=1000, db=source_db): # Fetch keys in chunks to prevent blocking the server. Default 1000
         source_keys.extend(keys)
 
     half_length = len(source_keys) // 2
